@@ -20,8 +20,12 @@ jobs:
           java-version: "17"
           distribution: "temurin"
 
-      - name: Dar permisos a mvnw
-        run: chmod +x ./mvnw
-
-      - name: Ejecutar pruebas
-        run: ./mvnw test
+      - name: Buscar y ejecutar pruebas en carpetas -v1
+        run: |
+          for dir in $(find . -type d -name "*-v1" -maxdepth 1); do
+            echo "Ejecutando pruebas en $dir"
+            cd $dir
+            chmod +x ./mvnw
+            ./mvnw test
+            cd ..
+          done
