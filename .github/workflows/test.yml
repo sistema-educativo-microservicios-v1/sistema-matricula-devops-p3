@@ -26,6 +26,6 @@ jobs:
             echo "Ejecutando pruebas en $dir"
             cd $dir
             chmod +x ./mvnw
-            ./mvnw -q test
+            ./mvnw -B test
             cd ..
           done
