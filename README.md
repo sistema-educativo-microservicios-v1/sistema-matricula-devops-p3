@@ -90,6 +90,17 @@ El sistema está compuesto por los siguientes microservicios:
 
 ---
 
+![Imagen de WhatsApp 2025-04-20 a las 18 09 46_aef3d6cc](https://github.com/user-attachments/assets/83bf8b13-79b0-4f7f-aa71-203924d8dbb9)
+## test de asignaturas
+
+![Imagen de WhatsApp 2025-04-20 a las 18 10 45_948e71d7](https://github.com/user-attachments/assets/a63054b1-05c5-446b-8f01-564515bfdc83)
+## test de matriculas
+
+![Imagen de WhatsApp 2025-04-20 a las 18 12 16_8ca3ead4](https://github.com/user-attachments/assets/a8c7a24a-a003-43c5-b2ed-af724c27189e)
+## test usuarios
+
+---
+
 ## 🐳 Docker y Docker Compose
 
 ### ¿Cómo ejecutar el sistema completo?
