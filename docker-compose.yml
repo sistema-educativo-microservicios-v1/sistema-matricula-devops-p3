@@ -1,0 +1,108 @@
+version: '3.8'
+services:
+
+  # MongoDB
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  # Eureka Server
+  eureka-server:
+    build: ./eureka-server
+    ports:
+      - "8761:8761"
+
+  # Config Server
+  config-server:
+    build: ./config-server
+    ports:
+      - "8888:8888"
+    depends_on:
+      - eureka-server
+
+  # Auth Service
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+      - eureka-server
+      - config-server
+
+  # Usuarios Servicio
+  usuarios-servicio:
+    build: ./usuarios-servicio
+    ports:
+      - "8084:8084"
+    depends_on:
+      - mongodb
+      - eureka-server
+      - config-server
+      - auth-service
+
+  # Asignaturas Servicio
+  asignaturas-service:
+    build: ./asignaturas-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongodb
+      - eureka-server
+      - config-server
+      - auth-service
+
+  # Matriculas Servicio
+  matriculas-service:
+    build: ./matriculas-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mongodb
+      - eureka-server
+      - config-server
+      - auth-service
+      - asignaturas-service
+      - usuarios-servicio
+
+  # Admin Server 
+  admin-server:
+    build: ./admin-server
+    ports:
+      - "8090:8090"
+    depends_on:
+      - eureka-server
+      - config-server
+
+  # Gateway
+  gateway-service:
+    build: ./gateway-service
+    ports:
+      - "8085:8085"
+    depends_on:
+      - eureka-server
+      - config-server
+
+  # Prometheus
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  # Grafana
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+
+volumes:
+  mongo-data:
+  grafana-data:
