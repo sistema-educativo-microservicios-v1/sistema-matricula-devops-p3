@@ -18,7 +18,7 @@ services:
 
   # Config Server
   config-server:
-    build: ./config-server
+    build: ./config-server1
     ports:
       - "8888:8888"
     depends_on:
