@@ -5,7 +5,7 @@ Incluye autenticación, gestión de usuarios, asignaturas y matrículas, con pru
 
 ---
 
-## 🧩 Arquitectura General
+##  Arquitectura General
 
 El sistema está compuesto por los siguientes microservicios:
 
@@ -73,7 +73,7 @@ El sistema está compuesto por los siguientes microservicios:
 
 ---
 
-## 🧪 Pruebas Automáticas
+##  Pruebas Automáticas
 
 - Cada microservicio incluye:
   - ✅ Al menos 2 pruebas unitarias con Mockito
@@ -90,13 +90,13 @@ El sistema está compuesto por los siguientes microservicios:
 
 ---
 
-## test de asignaturas
+## Test de asignaturas
 ![Imagen de WhatsApp 2025-04-20 a las 18 09 46_aef3d6cc](https://github.com/user-attachments/assets/83bf8b13-79b0-4f7f-aa71-203924d8dbb9)
 
-## test de matriculas
+## Test de matriculas
 ![Imagen de WhatsApp 2025-04-20 a las 18 10 45_948e71d7](https://github.com/user-attachments/assets/a63054b1-05c5-446b-8f01-564515bfdc83)
 
-## test usuarios
+## Test de usuarios
 ![Imagen de WhatsApp 2025-04-20 a las 18 12 16_8ca3ead4](https://github.com/user-attachments/assets/a8c7a24a-a003-43c5-b2ed-af724c27189e)
 
 
@@ -129,7 +129,7 @@ docker-compose up --build
 
 ---
 
-## 🧪 Postman Collection
+##  Postman Collection
 
 Incluye una colección de Postman para probar:
 - Registro e inicio de sesión
@@ -139,14 +139,14 @@ Incluye una colección de Postman para probar:
 
 ---
 
-## 👨‍💻 Autores
+##  Autores
 
 - Juan Esteban Rodríguez Murillo
 - Juan Sebastián Rodríguez Avendaño
 
 ---
 
-## 🏁 Conclusión
+##  Conclusión
 
 Este proyecto demuestra la aplicación de buenas prácticas DevOps con enfoque en:
 - Microservicios bien definidos y desacoplados
